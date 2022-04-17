@@ -20,6 +20,7 @@
     <th>state</th>
     <th>Dob</th>
     <th>email_id</th>
+    <th>last_name</th>
   </tr>
     {% for user in studentDetails %}
     <tr>
@@ -30,6 +31,8 @@
       <td> {{user[4]}} </td>
       <td> {{user[5]}} </td>
       <td> {{user[6]}} </td>
+      <td> {{user[7]}} </td>
+      <td> {{user[8]}} </td>
     </tr>
     {% endfor %}
   </table>

@@ -266,6 +266,7 @@ def student():
             studentDetails = request.form
             roll_no = studentDetails['roll_no']
             name = studentDetails['name']
+            last_name=studentDetails['last_name']
             branch=studentDetails['branch']
             street=studentDetails['street']
             city=studentDetails['city']
@@ -273,13 +274,14 @@ def student():
             DoB=studentDetails['DoB']
             email_id=studentDetails['email_id']
             cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO student VALUES(%s, %s, %s, %s, %s, %s, %s, %s)",(roll_no, name, branch, street, city, state, DoB, email_id ))
+            cur.execute("INSERT INTO student VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s)",(roll_no, name, last_name, branch, street, city, state, DoB, email_id ))
             mysql.connection.commit()
             cur.close()
         if request.form['stu'] == 'Update':
             studentDetails = request.form
             roll_no = studentDetails['roll_no']
             name = studentDetails['name']
+            last_name = studentDetails['last_name']
             branch=studentDetails['branch']
             street=studentDetails['street']
             city=studentDetails['city']
@@ -287,7 +289,7 @@ def student():
             DoB=studentDetails['DoB']
             email_id=studentDetails['email_id']
             cur = mysql.connection.cursor()
-            cur.execute("update student set name=%s, branch=%s, street=%s, city=%s, state=%s, DoB=%s, email_id=%s where roll_no=%s", (name, branch, street, city, state, DoB, email_id, roll_no))
+            cur.execute("update student set name=%s, last_name=%s, branch=%s, street=%s, city=%s, state=%s, DoB=%s, email_id=%s where roll_no=%s", (name, last_name, branch, street, city, state, DoB, email_id, roll_no))
             mysql.connection.commit()
             cur.close()
         if request.form['stu'] == 'Delete':
@@ -304,9 +306,19 @@ def student():
             cur.execute("delete from student where roll_no = %s", (roll_no))
             mysql.connection.commit()
             cur.close()
+        if request.form['stu'] == 'Search':
+            studentDetails = dict((key, request.form.getlist(key)) for key in request.form.keys())
+            sn = studentDetails['sn'][0]+'%'
+            sl = studentDetails['sl'][0]+'%'
+            cur = mysql.connection.cursor()
+            resultValue = cur.execute("SELECT * FROM student where name like %s and last_name like %s", (sn, sl))
+            print(resultValue, sn, sl)
+            if resultValue > 0:
+                res = cur.fetchall()
+                return render_template('studentview.html', studentDetails=res)
+            else:
+                return render_template('search.html')
 
-
-        return redirect('/studentview')
     return render_template('student.html')
 
 @app.route('/studentview', methods=['GET', 'POST'])
@@ -316,6 +328,8 @@ def stu():
     if resultValue > 0:
         studentDetails = cur.fetchall()
         return render_template('studentview.html',studentDetails=studentDetails)
+    else:
+        return render_template('search.html')
 
 
 @app.route('/warden_contact', methods=['GET', 'POST'])
@@ -614,8 +628,9 @@ def staff():
             name = staffDetails['name']
             service=staffDetails['service']
             salary=staffDetails['salary']
+            remarks=staffDetails['remarks']
             cur = mysql.connection.cursor()
-            cur.execute("INSERT INTO staff VALUES(%s, %s, %s, %s)",(staff_id, name, service, salary))
+            cur.execute("INSERT INTO staff VALUES(%s, %s, %s, %s, %s)",(staff_id, name, service, salary, remarks))
             mysql.connection.commit()
             cur.close()
         if request.form['stf'] == 'Update':
@@ -624,8 +639,9 @@ def staff():
             name = staffDetails['name']
             service=staffDetails['service']
             salary=staffDetails['salary']
+            remarks=staffDetails['remarks']
             cur = mysql.connection.cursor()
-            cur.execute("update staff set name=%s, service=%s, salary=%s where staff_id=%s", (name, service, salary, staff_id))
+            cur.execute("update staff set name=%s, service=%s, salary=%s, remarks=%s where staff_id=%s", (name, service, salary, staff_id, remarks))
             mysql.connection.commit()
             cur.close()
         if request.form['stf'] == 'Delete':
@@ -638,9 +654,14 @@ def staff():
             cur.execute("delete from staff where staff_id = %s", (staff_id))
             mysql.connection.commit()
             cur.close()
+        
+            
 
         return redirect('/staffview')
     return render_template('staff.html')
+
+
+  
 
 @app.route('/staffview', methods=['GET', 'POST'])
 def stf():
@@ -649,6 +670,7 @@ def stf():
     if resultValue > 0:
         staffDetails = cur.fetchall()
         return render_template('staffview.html',staffDetails=staffDetails)
+
 
 
 @app.route('/leave_rec', methods=['GET', 'POST'])

@@ -1,0 +1,1 @@
+eturn render_template('search.html'
