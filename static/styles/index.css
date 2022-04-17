@@ -1,0 +1,18 @@
+table, th, td{
+    border: 1px solid;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: white;
+    font-size: larger;
+    border-collapse: collapse;
+    border-style: dashed;
+    padding: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* font-weight: 1000; */
+    border-width: 2px;
+  }
+
+
+ 
+

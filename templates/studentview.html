@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student view</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+
+</head>
+<body>
+  <br><br><br><br><br>
+<table>
+  <tr>
+    <th>roll_no</th>
+    <th>name</th>
+    <th>branch</th>
+    <th>street</th>
+    <th>city</th>
+    <th>state</th>
+    <th>Dob</th>
+    <th>email_id</th>
+  </tr>
+    {% for user in studentDetails %}
+    <tr>
+      <td> {{user[0]}} </td>
+      <td> {{user[1]}} </td>
+      <td> {{user[2]}} </td>
+      <td> {{user[3]}} </td>
+      <td> {{user[4]}} </td>
+      <td> {{user[5]}} </td>
+      <td> {{user[6]}} </td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

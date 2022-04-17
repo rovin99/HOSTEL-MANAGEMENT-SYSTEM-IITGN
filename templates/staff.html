@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel ="stylesheet" href="{{ url_for('static', filename='styles/staff.scss') }}"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- code here -->
+            <div class="card">
+                <div class="card-image">	
+                    <h2 class="card-heading">
+                        IITGN
+                        <br/>
+                        <small>Hostel Management System</small>
+                        <br/>
+                        Staff
+                    </h2>
+                </div>
+                <form class="card-form" method="POST" action="">
+                    <div class="input">
+                        <input type="number" class="input-field" placeholder="Staff_id" name="staff_id" required/>
+                        <!-- <label class="input-label">Block Name</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="text" class="input-field" placeholder="Name" name="name"/>
+                        <!-- <label class="input-label">Occupancy</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="text" class="input-field" placeholder="Service" name="service"/>
+                        <!-- <label class="input-label">Capacity</label> -->
+                    </div>
+                    <div class="input">
+                        <input type="number" class="input-field" placeholder="Salary" name="salary" min="0"/>
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+                    <div class="action">
+                        <button class="action-button" name="stf" value="Insert">Insert</button>
+                        <button class="action-button" name="stf" value="Update">Update</button>
+                        <button class="action-button" name="stf" value="Delete">Delete</button>
+                        <button class="action-button" name="stf" value="Show Table">Show Table</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

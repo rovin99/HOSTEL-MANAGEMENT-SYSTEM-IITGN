@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hostel rooms view</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+
+</head>
+<body>
+  <br><br><br><br><br>
+<table>
+  <tr>
+    <th>block_name</th>
+    <th>room_no</th>
+    <th>sharing_type</th>
+    <th>floor</th>
+  </tr>
+    {% for user in hostel_roomsDetails %}
+    <tr>
+      <td> {{user[0]}} </td>
+      <td> {{user[1]}} </td>
+      <td> {{user[2]}} </td>
+      <td> {{user[3]}} </td>
+    </tr>
+    {% endfor %}
+  </table>
+  </body>
+  </html>

@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <link rel ="stylesheet" href="{{ url_for('static', filename='styles/transaction.scss') }}"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- code here -->
+            <div class="card">
+                <div class="card-image">	
+                    <h2 class="card-heading">
+                        IITGN
+                        <br/>
+                        <small>Hostel Management System</small>
+                        <br/>
+                        Transaction
+                    </h2>
+                </div>
+                <form class="card-form" method="POST" action="">
+                    <div class="input">
+                        <input type="number" class="input-field" placeholder="Transaction_id" name="transaction_id" required/>
+                        <!-- <label class="input-label">Block Name</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="number" class="input-field" placeholder="Amount" name="amount" />
+                        <!-- <label class="input-label">Occupancy</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="text" class="input-field" placeholder="Mode of Payment" name="mode_of_payment"/>
+                        <!-- <label class="input-label">Capacity</label> -->
+                    </div>
+                   
+                    <div class="action">
+                        <button class="action-button" name="trans" value="Insert">Insert</button>
+                        <button class="action-button" name="trans" value="Update">Update</button>
+                        <button class="action-button" name="trans" value="Delete">Delete</button>
+                        <button class="action-button" name="trans" value="Show Table">Show Table</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <link rel ="stylesheet" href="{{ url_for('static', filename='styles/furniture.scss') }}"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- code here -->
+            <div class="card">
+                <div class="card-image">	
+                    <h2 class="card-heading">
+                        IITGN
+                        <br/>
+                        <small>Hostel Management System</small>
+                        <br/>
+                        Furniture
+                        
+                    </h2>
+                 
+                </div>
+                <form class="card-form" method="POST" action="">
+                    <div class="input">
+                        <input type="text" class="input-field" placeholder="Furniture_id" name="furniture_id" required/>
+                        <!-- <label class="input-label">Block Name</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="text" class="input-field" placeholder="type" name="type"/>
+                        <!-- <label class="input-label">Occupancy</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="number" class="input-field" placeholder="Price" name="price" />
+                        <!-- <label class="input-label">Capacity</label> -->
+                    </div>
+                    <div class="input">
+                        <input type="text" class="input-field" placeholder="Block_name" name="block_name" />
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+
+                    <div class="input">
+                        <input type="number" class="input-field" placeholder="Room_no." name="room_no" />
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+                    <div class="action">
+                        <button class="action-button" name="fur" value="Insert">Insert</button>
+                        <button class="action-button" name="fur" value="Update">Update</button>
+                        <button class="action-button" name="fur" value="Delete">Delete</button>
+                        <button class="action-button" name="fur" value="Show Table">Show Table</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

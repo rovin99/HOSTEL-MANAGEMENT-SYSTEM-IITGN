@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <link rel ="stylesheet" href="{{ url_for('static', filename='styles/hostel_rooms.scss') }}"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- code here -->
+            <div class="card">
+                <div class="card-image">	
+                    <h2 class="card-heading">
+                        IITGN
+                        <br/>
+                        <small>Hostel Management System</small>
+                        <br/>
+                        Hostel_Rooms
+                    </h2>
+                </div>
+                <form class="card-form" method="POST" action="">
+                    <div class="input">
+                        <input type="text" class="input-field" placeholder="Block_Name" name="block_name" required/>
+                        <!-- <label class="input-label">Block Name</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="number" class="input-field" placeholder="Room_No." name="room_no" required/>
+                        <!-- <label class="input-label">Occupancy</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="text" class="input-field" placeholder="Sharing_Type" name="sharing_type"/>
+                        <!-- <label class="input-label">Capacity</label> -->
+                    </div>
+                    <div class="input">
+                        <input type="text" class="input-field" placeholder="Floor" name="floor"/>
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+                    <div class="action">
+                        <button class="action-button" name="hos" value="Insert">Insert</button>
+                        <button class="action-button" name="hos" value="Update">Update</button>
+                        <button class="action-button" name="hos" value="Delete">Delete</button>
+                        <button class="action-button" name="hos" value="Show Table">Show Table</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

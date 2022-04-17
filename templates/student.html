@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <link rel ="stylesheet" href="{{ url_for('static', filename='styles/student.scss') }}"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- code here -->
+            <div class="card">
+                <div class="card-image">	
+                    <h2 class="card-heading">
+                        IITGN
+                        <br/>
+                        <small>Hostel Management System</small>
+                        <br/>
+                        Student
+                    </h2>
+                </div>
+                <form class="card-form" method="POST" action="">
+                    <div class="input">
+                        <input type="number" class="input-field" placeholder="Roll_no." name="roll_no" required/>
+                        <!-- <label class="input-label">Block Name</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="text" class="input-field" placeholder="Name" name="name" />
+                        <!-- <label class="input-label">Occupancy</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="text" class="input-field" placeholder="Branch" name="branch" />
+                        <!-- <label class="input-label">Capacity</label> -->
+                    </div>
+                    <div class="input">
+                        <input type="text" class="input-field" placeholder="Street" name="street"/>
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+                    <div class="input">
+                        <input type="text" class="input-field" placeholder="City" name="city"/>
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+                    <div class="input">
+                        <input type="text" class="input-field" placeholder="State"  name="state"/>
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+                    <div class="input">
+                        <input type="date" class="input-field" placeholder="DOB" name="DoB"/>
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+                    <div class="input">
+                        <input type="email" class="input-field" placeholder="email" name="email_id" />
+                        <!-- <label class="input-label">Laundary Days</label> -->
+                    </div>
+
+                    <div class="action">
+                        <button class="action-button" name="stu" value="Insert">Insert</button>
+                        <button class="action-button" name="stu" value="Update">Update</button>
+                        <button class="action-button" name="stu" value="Delete">Delete</button>
+                        <button class="action-button" name="stu" value="Show Table">Show Table</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

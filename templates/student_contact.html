@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel ="stylesheet" href="{{ url_for('static', filename='styles/student_contact.scss') }}"/>
+    </head>
+
+    <body>
+        <div class="container">
+            <!-- code here -->
+            <div class="card">
+                <div class="card-image">	
+                    <h2 class="card-heading">
+                        IITGN
+                        <br/>
+                        <small>Hostel Management System</small>
+                        <br/>
+                        Student_Contact
+                    </h2>
+                </div>
+                <form class="card-form" method="POST" action="">
+                    <div class="input">
+                        <input type="number" class="input-field" placeholder="Roll_no." name="roll_no" required/>
+                        <!-- <label class="input-label">Block Name</label> -->
+                    </div>
+                                <div class="input">
+                        <input type="number" class="input-field" placeholder="Contact" name="contact" required/>
+                        <!-- <label class="input-label">Occupancy</label> -->
+                    </div>
+
+                  
+                    <div class="action">
+                        <button class="action-button" name="stuc" value="Insert">Insert</button>
+                        <button class="action-button" name="stuc" value="Update">Update</button>
+                        <button class="action-button" name="stuc" value="Delete">Delete</button>
+                        <button class="action-button" name="stuc" value="Show Table">Show Table</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</body>
+</html>

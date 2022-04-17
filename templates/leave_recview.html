@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leave_rec view</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='styles/index.css') }}">
+
+</head>
+<body>
+  <br><br><br><br><br>
+<table>
+  <tr>
+    <th>record_no</th>
+    <th>out_time</th>
+    <th>in_time</th>
+    <th>roll_no</th>
+  </tr>
+    {% for user in leave_recDetails %}
+    <tr>
+      <td> {{user[0]}} </td>
+      <td> {{user[1]}} </td>
+      <td> {{user[2]}} </td>
+      <td> {{user[3]}} </td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
